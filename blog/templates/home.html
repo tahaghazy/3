@@ -1,0 +1,23 @@
+
+{% extends 'blog/base.html' %}
+{% block content %}
+<section>
+  <div class="row mb-4 wow fadeIn ">
+
+{% for category in categories %}
+<div class="col-md-12 mb-4 text-center ">
+
+            <!--Card-->
+<a class="text-muted" href="{% url 'category' category.slug %}"><h1 class="card border-bottom mt-6 mb-3 bg-light text-secondery p-3">{{category.title}}</h1></a>
+<h1></h1>
+
+
+
+            <!--/.Card-->
+
+          </div>
+{% endfor %}
+   </div>
+</section>
+
+{% endblock content %}

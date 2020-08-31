@@ -1,0 +1,131 @@
+{% load static %}
+{% load post_tag %}
+
+
+<!DOCTYPE html>
+
+<html lang="ar" >
+<head>
+{% if title %}
+  <title>{{title}}</title>
+{% else %}
+  <title>مخططات رفحاء</title>
+{% endif %}
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'Power/css/bootstrab.css' %}">
+    <link rel="stylesheet" href="{% static 'Power/css/stule1.css' %}">
+    <link rel="shortcut icon" href="{% static 'Power/images/icon.jpeg' %}">
+
+</head>
+<body >
+<header>
+
+<nav class="navbar navbar-expand-lg navbar-light border-bottom bg-light">
+  <a class="navbar-brand" href="{% url 'home'%}">مخططات رفحاء
+      <img style="
+    width: 50px;
+" src="{% static 'Power/images/icon.png' %}"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+{% if user.is_authenticated %}
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active text-left">
+        <a class="btn btnsecondary my-2 my-sm-0 " href="{% url 'profile'%}"><h4 ><i  class="fas fa-user-circle"></i></h4><span class="sr-only">(current)</span></a>
+      </li>
+                <li class="nav-item active">
+        <a class=" btn btn-outline-secondary my-2 my-sm-0" href="{% url 'logout'%}"> تسجيل الخروج <span class="sr-only">(current)</span></a>
+      </li>
+
+
+                </ul>
+                {% else %}
+                <ul class="navbar-nav mr-auto">
+ <li class="nav-item active">
+        <a class=" btn btn-outline-secondary my-2 my-sm-0" href="{% url 'login'%}"> تسجيل الدخول <span class="sr-only">(current)</span></a>
+      </li> <li class="nav-item active">
+                   <li class="nav-item">
+        <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true"></a>
+      </li>
+        <a class=" btn btn-outline-secondary my-2 my-sm-0" href="{% url 'register'%}">تسجيل<span class="sr-only">(current)</span></a>
+      </li>
+                </ul>
+             {% endif %}
+  </div>
+</nav>
+</header>
+<section>
+  <div class="container">
+    <div class="row mt-4 " >
+      <div class="col-md-12 ">
+{% latest_posts %}
+          {% block content %}
+
+          {% endblock content %}
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="bd-footer  text-muted" >
+
+  <div class="container fluid">
+
+    <div class="row">
+      <div class="col-md">
+        <div class="card-group m-2">
+
+          <div class="card bg-light">
+              <a class="nav-link"  ></a>
+
+            <h3 class="card-title text-center text-secondary border-bottom  p-2 md-2" >
+
+            </h3>
+            <div class="card-body text-center">
+              <h5><a class="navbar-brand" href="{% url 'home'%}">مخططات رفحاء<img style="
+    width: 200px;
+" src="{% static 'Power/images/icon.png' %}"></a></h5>
+
+              <h5 class="mt-3">للتواصل عبر واتساب</h5>
+              <h1><a class="navbar-brand" href="https://api.whatsapp.com/send?phone=966560806050"><img style="
+    width: 50px;
+" src="{% static 'Power/images/whattsapp.png' %}"></a></h1>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row p-2">
+      <div class="col-md text-center">
+        <small class="text-secondary"> &copy; جميع الحقوق محفوظه لدي مخططات رفحاء </small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'Power\js\jquery.js'%}"></script>
+<script src="{% static 'Power\js\popper.js'%}"></script>
+<script src="{% static 'Power\js\fontawsome.js'%}"></script>
+<script src="{% static 'Power\js\bootstrp.js'%}"></script>
+</body>
+</html>
