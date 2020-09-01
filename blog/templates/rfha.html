@@ -7,8 +7,12 @@
 
 {% for post in post %}
 
-            <!--Card-->
+    {% if post.ImageURL %}
 <a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "><h1 style=""  class=" border-bottom text-secondery p-3">{{post.title}}</h1></a>
+    {% else %}
+    <h1 style=""  class=" border-bottom text-secondery p-3">{{post.title}}</h1>
+
+    {% endif %}        <!--Card-->
 
 
 
