@@ -8,9 +8,9 @@
 {% for post in post %}
 
     {% if post.ImageURL %}
-<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "><h1 style=""  class=" border-bottom text-secondery p-3">{{post.title}}</h1></a>
+<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "> <h4 style=""  class="shadow-lg p-1 mb-2 bg-white rounded border-bottom text-secondery ">{{post.title}}</h4></a>
     {% else %}
-    <h1 style=""  class=" border-bottom text-secondery p-3">{{post.title}}</h1>
+    <h4 style=""  class="shadow-lg p-1 mb-2 bg-white rounded border-bottom text-secondery ">{{post.title}}</h4>
 
     {% endif %}        <!--Card-->
 

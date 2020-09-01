@@ -17,5 +17,6 @@ urlpatterns = [
     path('detail/<slug:pk>/delete/', views.PostDeleteView.as_view(), name='post_delete'),
     path('new-post/', views.PostCreateView.as_view(), name='new_post'),
     path('rfha/', views.rfha, name='rfha'),
+    path('searchposts/', views.searchposts, name='searchposts'),
 
 ]
