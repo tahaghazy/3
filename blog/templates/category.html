@@ -4,7 +4,7 @@
 <section>
     {% if user.is_authenticated %}
 
-        <a class=" btn btn-outline-primary my-2 my-sm-0 rounded-pill border-secondary card border-bottom mt-6 mb-3  text-secondery p-3" href="{% url 'new_post' %}">  اضافة منشور <span class="sr-only">(current)</span></a>
+        <a class=" btn btn-outline-primary my-2 my-sm-0 rounded-pill border-secondary card border-bottom mt-6 mb-3  text-secondery p-3" href="{% url 'new_post' %}">  أضف عرض أو طلب  <span class="sr-only">(current)</span></a>
     {% endif %}
 <br/>
 {% for post in post %}
