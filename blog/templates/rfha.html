@@ -1,0 +1,23 @@
+
+{% extends 'blog/base.html' %}
+{% block content %}
+<section>
+  <div class="row mb-4 wow fadeIn ">
+<div class="col-md-12 mb-4 text-center ">
+
+{% for post in post %}
+
+            <!--Card-->
+<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "><h1 style=""  class=" border-bottom text-secondery p-3">{{post.title}}</h1></a>
+
+
+
+            <!--/.Card-->
+
+{% endfor %}
+              </div>
+
+   </div>
+</section>
+
+{% endblock content %}

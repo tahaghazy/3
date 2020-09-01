@@ -3,13 +3,21 @@
 {% block content %}
 <section>
   <div class="row mb-4 wow fadeIn ">
+<div class="col-md-12 mb-4 text-center ">
 
+            <!--Card-->
+<a style="    text-decoration: none !important;" href="{% url 'rfha' %}"><h1 style=""  class="rounded-pill border-secondary card border-bottom mt-6 mb-3  text-secondery p-3">مخططات رفحاء</h1></a>
+
+
+
+            <!--/.Card-->
+
+          </div>
 {% for category in categories %}
 <div class="col-md-12 mb-4 text-center ">
 
             <!--Card-->
 <a style="    text-decoration: none !important;" href="{% url 'category' category.slug %}"><h1 style=""  class="rounded-pill border-secondary card border-bottom mt-6 mb-3  text-secondery p-3">{{category.title}}</h1></a>
-<h1></h1>
 
 
 

@@ -34,7 +34,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100,verbose_name='العنوان',help_text='قم بادخال عنوان المنشور')
     content = models.TextField(verbose_name='الوصف',help_text='قم بادخال الوصف')
-    files = models.FileField(default=False,upload_to='media',verbose_name='المخطط')
+    files = models.FileField(blank=True,null=True,default=False,upload_to='media',verbose_name='المخطط')
     category = models.ForeignKey(Category, on_delete=models.CASCADE,blank=True,null=True,related_name='posts', verbose_name="التصنيف ",help_text='قم باختيار التصنيف')
     slug = models.SlugField(blank=True,null=True,unique=True,allow_unicode=True,help_text='يفضل تركه فارغا')
     post_date = models.DateTimeField(default=timezone.now,help_text='يفضل تركه كما هو',verbose_name='تاريخ المنشور')
@@ -70,3 +70,42 @@ class Post(models.Model):
         ordering = ('-post_date',)
         verbose_name = ('المنشور')
         verbose_name_plural = ('المنشورات')
+
+class PostS(models.Model):
+    title = models.CharField(max_length=100,verbose_name='العنوان',help_text='قم بادخال عنوان المنشور')
+    content = models.TextField(null=True,blank=True,verbose_name='الوصف',help_text='قم بادخال الوصف')
+    files = models.FileField(blank=True,null=True,default=False,upload_to='media',verbose_name='المخطط')
+    slug = models.SlugField(blank=True,null=True,unique=True,allow_unicode=True,help_text='يفضل تركه فارغا')
+    post_date = models.DateTimeField(default=timezone.now,help_text='يفضل تركه كما هو',verbose_name='تاريخ المنشور')
+    post_update = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name='المستخدم')
+    active = models.BooleanField(default=True,verbose_name='تفعيل')
+
+    @property
+    def ImageURL(self):
+        try:
+            url = self.files.url
+        except:
+            url = ''
+        return url
+
+
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+            if not self.slug:
+                self.slug = arabic_slugify(self.title)
+        super(PostS,self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return f'/detail/{self.slug}'
+
+    class Meta:
+        ordering = ('-post_date',)
+        verbose_name = ('مخططات رفحاء المطوره')
+        verbose_name_plural = ('مخططات رفحاء المطوره')
