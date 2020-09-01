@@ -1,4 +1,4 @@
-          <div id="carousel-example-1z" class="carousel slide carousel-fade mb-3" data-ride="carousel">
+          <div  id="carousel-example-1z" class="carousel slide carousel-fade mb-3" data-ride="carousel">
   <!--Indicators-->
 
   <!--/.Indicators-->
@@ -6,13 +6,13 @@
   <div class="carousel-inner" role="listbox">
     <!--First slide-->
     <div class="carousel-item active">
-        <h1 class="card bg-secondary text-light">مخططات رفحاء</h1>
+        <h1 style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);" class="card  text-light">مخططات رفحاء</h1>
     </div>
     <!--/First slide-->
     <!--Second slide-->
       {% for post in l_posts %}
     <div class="carousel-item">
-                <a href="{% url 'detail' post.slug %}"><h1 class="card bg-secondary text-light">{{post.title}}</h1></a>
+                <a style="    text-decoration: none !important;" href="{% url 'detail' post.slug %}"><h1 style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg" class="card rounded-pill bg-secondary text-light">{{post.title}}</h1></a>
 
     </div>
 {% endfor %}
