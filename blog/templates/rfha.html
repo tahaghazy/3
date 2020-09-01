@@ -2,22 +2,18 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <section>
-  <div class="row mb-4 wow fadeIn ">
+  <div class="row mb-4 wow fadeIn text-center ">
 <div class="col-md-12 mb-4 text-center ">
 
 {% for post in post %}
 
     {% if post.ImageURL %}
-<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "> <h4 style=""  class="shadow-lg p-1 mb-2 bg-white rounded border-bottom text-secondery ">{{post.title}}</h4></a>
+<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "> <h5 style=""  class="border-bottom border-3  p-1      text-secondery ">{{post.title}}</h5></a>
+
     {% else %}
-    <h4 style=""  class="shadow-lg p-1 mb-2 bg-white rounded border-bottom text-secondery ">{{post.title}}</h4>
+    <h5 style=""  class=" border-bottom p-1     text-secondery ">{{post.title}}</h5>
 
-    {% endif %}        <!--Card-->
-
-
-
-            <!--/.Card-->
-
+    {% endif %}
 {% endfor %}
               </div>
 
