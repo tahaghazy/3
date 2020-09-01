@@ -40,7 +40,7 @@ class Post(models.Model):
     post_date = models.DateTimeField(default=timezone.now,help_text='يفضل تركه كما هو',verbose_name='تاريخ المنشور')
     post_update = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name='المستخدم')
-    active = models.BooleanField(default=False,verbose_name='تفعيل')
+    active = models.BooleanField(default=True,verbose_name='تفعيل')
 
     @property
     def ImageURL(self):
