@@ -3,15 +3,16 @@
 {% block content %}
 <section>
   <div class="row mb-4 wow fadeIn text-center ">
-<div class="col-md-12 mb-4 text-center ">
+<div align="center" class="col-md-12 mb-4 text-center ">
 
 {% for post in post %}
 
     {% if post.ImageURL %}
-<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "> <h5 style=""  class="border-bottom border-3  p-1      text-secondery ">{{post.title}}</h5></a>
-
+<a style="    text-decoration: none !important;" href=" {{post.ImageURL}} "> <h5  style=""  class=" border-3       text-secondery ">{{post.title}}</h5></a>
+<div>---------------------------------------------------</div>
     {% else %}
-    <h5 style=""  class=" border-bottom p-1     text-secondery ">{{post.title}}</h5>
+    <h5 style=""  class="       text-secondery ">{{post.title}}</h5>
+<div>---------------------------------------------------</div>
 
     {% endif %}
 {% endfor %}
