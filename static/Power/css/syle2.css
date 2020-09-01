@@ -3,6 +3,11 @@
     src: url('../fonts/Tajawal-Bold.ttf')  format("truetype"),
          local('Tajawal');
   }
+  @font-face {
+    font-family: 'Tajawalm';
+    src: url('../fonts/Tajawal-Medium.ttf')  format("truetype"),
+         local('Tajawalm');
+  }
   html, body{
   direction:rtl;
  text-align:right;
@@ -13,9 +18,33 @@ background-image: url();
     font-family: 'Tajawal', sans-serif;
 }
 
-h1 {
-font-family: 'Tajawal', sans-serif;
-font-size: 30px;
+h6{
+font-family: 'Tajawalm', sans-serif;
+
+ text-align:center;
+ }
+h5 {
+font-family: 'Tajawalm', sans-serif;
+
+ text-align:center;
+ }
+ h4  {
+font-family: 'Tajawalm', sans-serif;
+
+ text-align:center;
+ }
+   h3   {
+font-family: 'Tajawalm', sans-serif;
+
+ text-align:center;
+ }
+  h2    {
+font-family: 'Tajawalm', sans-serif;
+
+ text-align:center;
+ }
+ h1 {
+font-family: 'Tajawalm', sans-serif;
 
  text-align:center;
  }
