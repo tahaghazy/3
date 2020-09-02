@@ -35,6 +35,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100,verbose_name='العنوان',help_text='قم بادخال عنوان المنشور')
     content = models.TextField(verbose_name='الوصف',help_text='قم بادخال الوصف')
     files = models.FileField(blank=True,null=True,upload_to='media',verbose_name='المخطط')
+    title2 = models.CharField(null=True,blank=True,max_length=100,verbose_name='عنوان الرابط او الصوره',help_text='قم بادخال عنوان للرابط الذي تريد وضعه او للصوره التي تريد وضعها')
+    url = models.URLField(null=True,blank=True,verbose_name='الرابط',help_text='قم بادخال الرابط ')
     category = models.ForeignKey(Category, on_delete=models.CASCADE,blank=True,null=True,related_name='posts', verbose_name="التصنيف ",help_text='قم باختيار التصنيف')
     slug = models.SlugField(blank=True,null=True,unique=True,allow_unicode=True,help_text='يفضل تركه فارغا')
     post_date = models.DateTimeField(default=timezone.now,help_text='يفضل تركه كما هو',verbose_name='تاريخ المنشور')

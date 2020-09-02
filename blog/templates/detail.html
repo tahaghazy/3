@@ -17,7 +17,10 @@
    <p> {{post.content}}
 </p>
     {% if post.ImageURL %}
-    <a href="{{post.ImageURL}}">المخطط</a>
+    <a href="{{post.ImageURL}}">{{post.title2}}</a>
+    {% endif %}
+        {% if post.url %}
+    <a href="{{post.url}}">{{post.title2}}</a>
     {% endif %}
 
 </div>
