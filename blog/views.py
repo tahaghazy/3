@@ -104,6 +104,22 @@ def rfha(request):
         'post':post
     }
     return render(request, 'rfha.html', context)
+def cars(request):
+    post = PostSS.objects.filter(active=True)
+    paginator = Paginator(post, 10)
+    page = request.GET.get('page')
+    try:
+        post = paginator.page(page)
+    except PageNotAnInteger:
+        post = paginator.page(1)
+    except EmptyPage:
+        post = paginator.page(paginator.num_page)
+
+    context = {
+        'post':post
+    }
+    return render(request, 'cars.html', context)
+
 
 
 def searchposts(request):

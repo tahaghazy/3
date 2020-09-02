@@ -1,11 +1,9 @@
-
 {% extends 'blog/base.html' %}
 {% block content %}
 <section>
   <div class="row mb-4 wow fadeIn text-center ">
 <div align="center" class="col-md-12 mb-4 text-center ">
-<a style="    text-decoration: none !important;" href=" {% url 'cars' %} "> <h5  style=""  class="mb-2 btn btn-outline-primary border-3   w-50    text-secondery ">سيارات</h5></a>
-<br/>
+
 {% for post in post %}
 
 <a style="    text-decoration: none !important;" href=" {{post.url}} "> <h5  style=""  class="mb-2 btn btn-outline-primary border-3   w-50    text-secondery ">{{post.title}}</h5></a>
