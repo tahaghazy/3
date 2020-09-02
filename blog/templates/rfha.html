@@ -4,16 +4,16 @@
 <section>
   <div class="row mb-4 wow fadeIn text-center ">
 <div align="center" class="col-md-12 mb-4 text-center ">
-{% for post in post %}
-
-<a style="    text-decoration: none !important;" href=" {{post.url}} "> <h5  style=""  class="mb-2 btn btn-outline-primary border-3   w-50    text-secondery ">{{post.title}}</h5></a>
-   <br/>
+<br/>
+    {% for post in post %}
 
 
-{% endfor %}
-              </div>
+        {% if post.ImageURL %}
+<a style="text-decoration: none !impourlnt;" href="{{post.ImageURL}}" <h5    class="mb-2 btn btn-outline-primary w-50 border-3 text-secondery">{{post.title}}</h5></a>
+    {% endif %}
+        {% if post.url %}
+<a style="    text-decoration: none !impourlnt;" href="{{post.url}}" <h5 class="mb-2 btn btn-outline-primary w-50 border-3 text-secondery ">{{post.title}}</h5></a>
+    {% endif %}
+        {% endfor %}
+{% endblock %}
 
-   </div>
-</section>
-
-{% endblock content %}

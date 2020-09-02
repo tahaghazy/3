@@ -9,7 +9,7 @@ register = template.Library()
 def latest_posts():
 
     context = {
-        'l_posts': Post.objects.filter(active=True)[0:1],
+        'l_posts': Post.objects.filter(active=True)[0:10],
     }
     return context
 

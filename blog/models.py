@@ -152,3 +152,6 @@ class PostSS(models.Model):
         ordering = ('-post_date',)
         verbose_name = (' سياره ')
         verbose_name_plural = ('  سيارات')
+
+
+
