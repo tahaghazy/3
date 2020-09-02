@@ -9,10 +9,10 @@
 
 
         {% if post.ImageURL %}
-<a style="text-decoration: none !impourlnt;" href="{{post.ImageURL}}" <h5    class="mb-2 btn btn-outline-primary w-50 border-3 text-secondery">{{post.title}}</h5></a>
+<a style="text-decoration: none !impourlnt;" href="{{post.ImageURL}}" <h5    class="mb-2 btn btn-outline-dark w-50 border-3 text-secondery">{{post.title}}</h5></a>
     {% endif %}
         {% if post.url %}
-<a style="    text-decoration: none !impourlnt;" href="{{post.url}}" <h5 class="mb-2 btn btn-outline-primary w-50 border-3 text-secondery ">{{post.title}}</h5></a>
+<a style="    text-decoration: none !impourlnt;" href="{{post.url}}" <h5 class="mb-2 btn btn-outline-dark w-50 border-3 text-secondery ">{{post.title}}</h5></a>
     {% endif %}
         {% endfor %}
 {% endblock %}
