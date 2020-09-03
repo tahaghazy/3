@@ -91,15 +91,6 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 def rfha(request):
     post = PostS.objects.filter(active=True)
-    paginator = Paginator(post, 10)
-    page = request.GET.get('page')
-    try:
-        post = paginator.page(page)
-    except PageNotAnInteger:
-        post = paginator.page(1)
-    except EmptyPage:
-        post = paginator.page(paginator.num_page)
-
     context = {
         'post':post
     }
