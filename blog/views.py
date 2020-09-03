@@ -29,15 +29,6 @@ def category(request,slug):
     categories = Category.objects.all()
     category = get_object_or_404(Category,slug=slug)
     post = category.posts.filter(active=True)
-    paginator = Paginator(post, 6)
-    page = request.GET.get('page')
-    try:
-        post = paginator.page(page)
-    except PageNotAnInteger:
-        post = paginator.page(1)
-    except EmptyPage:
-        post = paginator.page(paginator.num_page)
-
     context = {
         'categories': categories,
         'post':post
