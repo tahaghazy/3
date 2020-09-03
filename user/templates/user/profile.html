@@ -25,19 +25,19 @@
             <p class="font-weight-bold">الاسم: <span class="font-weight-normal">{{user.first_name}}
                     {{user.last_name}}</span></p>
             <p class="font-weight-bold">البريد الإلكتروني: <span class="font-weight-normal">{{user.email}}</span></p>
-            <p class="font-weight-bold">عدد المنشورات : <span class="font-weight-normal">{{posts.count}}</span></p>
+            <p class="font-weight-bold">عدد المشاركات : <span class="font-weight-normal">{{posts.count}}</span></p>
 
 
         </div>
 
     </div>
-      <h3 class="border-bottom mb-4 pb-3 mt-5">منشوراتي</h3>
+      <h3 class="border-bottom mb-4 pb-3 mt-5">مشاركاتي</h3>
         {% for post in post_list %}
         <ul class="pr-2">
             <a class="text-dark" href="{% url 'detail' post.id %}">{{post.title}}</a>
         </ul>
         {% empty %}
-        <h4 class="text-center mb-5">لا يوجد منشورات</h4>
+        <h4 class="text-center mb-5">لا يوجد مشاركات</h4>
         {% endfor %}
 </div>
 
