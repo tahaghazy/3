@@ -32,7 +32,7 @@ class Category(models.Model):
         return self.title
 
 class Post(models.Model):
-    title = models.CharField(max_length=100,verbose_name='العنوان',help_text='قم بادخال العنوان ')
+    title = models.CharField(default=False,max_length=100,verbose_name='العنوان',help_text='قم بادخال العنوان ')
     content = models.TextField(verbose_name='الوصف',help_text='قم بادخال الوصف')
     files = models.FileField(blank=True,null=True,upload_to='media',verbose_name='المخطط')
     title2 = models.CharField(null=True,blank=True,max_length=100,verbose_name='عنوان الرابط او الصوره',help_text='قم بادخال عنوان للرابط الذي تريد وضعه او للصوره التي تريد وضعها')
