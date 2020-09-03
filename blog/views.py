@@ -14,12 +14,11 @@ from .forms import *
 
 
 
-
 def home(request):
     categories = Category.objects.all()
 
     context = {
-        'categories': categories
+        'categories': categories,
 
     }
 
@@ -29,6 +28,7 @@ def category(request,slug):
     categories = Category.objects.all()
     category = get_object_or_404(Category,slug=slug)
     post = category.posts.filter(active=True)
+
     context = {
         'categories': categories,
         'post':post
@@ -82,6 +82,7 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
 
 def rfha(request):
     post = PostS.objects.filter(active=True)
+
     context = {
         'post':post
     }
